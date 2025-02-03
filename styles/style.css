@@ -5,6 +5,7 @@ body {
     margin: 0px;
     padding-top: 60px;
 }
+html { scroll-behavior: smooth; }
 
 .header ,
 .footer{
@@ -17,6 +18,10 @@ body {
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 60px;
+}
+.footer {
+    height: 60px;
+    color: #f9faf8;
 }
 .left {
     font-size: 24px;
@@ -34,14 +39,25 @@ li a{
     font-size: 18px;
     color: #e5e7eb;
     text-decoration: none;
+    transition: .25s;
+}
+li a:hover {
+    opacity: .7;
+    text-decoration: underline;
+}
+
+li a:active {
+    opacity: .5;
+    text-decoration: underline;
 }
 
 .intro {
     background-color: #1F2937;
     display: flex;
-    height: 500px;
-    justify-content: center;
+    flex-basis: 500px;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .intro-contents {
@@ -51,13 +67,21 @@ li a{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
+    flex-wrap: wrap;
 }
 
 .img-container {
-    width: 400px;
-    height: 300px;
-    background-color: rgb(224, 220, 220);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.img-container img {
+
+    border-radius: 50%;
+    object-fit: cover;
+
 }
 
 .intro-contents h1 {
@@ -69,6 +93,7 @@ li a{
 .intro-contents div {
     font-size: 18px;
     color: #e5e7eb;
+    
 }
 button {
     background-color: #3882f6;
@@ -79,17 +104,23 @@ button {
     cursor: pointer;
     margin-top: 10px;
 }
-
+button:hover {
+    opacity: .7;
+}
 .first-body {
-    height: 500px;
+    flex-basis: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .skills-container {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
 }
 .skills-img-info-container {
     width: 170px;
@@ -117,14 +148,12 @@ button {
 }
 
 .project-container {
-    display: inline-block;
     height: 270px;
     width: 250px;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
     align-items: center;
-    overflow: hidden;
 
 }
 
@@ -132,11 +161,59 @@ button {
     height: 220px;
     width: 100%;
     border-radius: 25px;
-    box-shadow: 0 0 4px rbga(0, 0, 0, .06);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 5px;
 }
+
 .project-container div {
     font-size: 18px;
     font-weight: 700;
     color: #000000;
 
 }
+
+.third-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.third-body .container {
+    background-color: #3882f6;
+    width: 600px;
+    height: 100px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    align-items: center;
+    
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    color: #f9faf8;
+}
+
+.contact-text .first {
+    font-size: 18px;
+    font-weight: bold;
+}
+.contact-text .second {
+    font-size: 14px;
+}
+.contact-button {
+    border: 1px solid #f9faf8;
+    border-radius: 8px;
+    color: #f9faf8;
+}
+
+@media (min-width: 768px) {
+    .intro-contents {
+        justify-content: center;
+    }
+  }
+
